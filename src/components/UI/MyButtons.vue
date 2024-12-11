@@ -1,0 +1,19 @@
+<template>
+    <button class="btn">
+        <slot></slot>
+    </button>
+</template>
+
+<script>
+export default {
+
+}
+</script>
+<style>
+.btn {
+    padding: 10px 15px;
+    background: none;
+    color: turquoise;
+    border: 1px solid turquoise;
+}
+</style>
