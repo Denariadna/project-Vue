@@ -1,7 +1,7 @@
 <template>
     <div class="post" v-for="post in posts" :key="post.id">
             <h2>{{ post.title }}</h2>
-            <p>{{ post.description }}</p>
+            <p>{{ post.body }}</p>
         </div>
 </template>
 

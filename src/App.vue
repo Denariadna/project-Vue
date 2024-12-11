@@ -1,6 +1,6 @@
 <template>
     <div class="app">
-        <post-form/>
+        <post-form  @create="createPost"/>
         <PostList :posts="posts"/>
     </div>
 </template>
@@ -16,26 +16,17 @@ export default {
     data() {
         return {
             posts: [
-                { id: 1, title: 'Пост о котах', description: 'Мягкие пушистые красивые' },
-                { id: 2, title: 'Пост о котах 2', description: 'Мягкие пушистые красивые' },
-                { id: 3, title: 'Пост о котах 3', description: 'Мягкие пушистые красивые' },
-                { id: 4, title: 'Пост о котах 4', description: 'Мягкие пушистые красивые' }
-            ],
-            title: '',
-            body: '',
+                { id: 1, title: 'Пост о котах', body: 'Мягкие пушистые красивые' },
+                { id: 2, title: 'Пост о котах 2', body: 'Мягкие пушистые красивые' },
+                { id: 3, title: 'Пост о котах 3', body: 'Мягкие пушистые красивые' },
+                { id: 4, title: 'Пост о котах 4', body: 'Мягкие пушистые красивые' }
+            ]
         }
     },
 
     methods: {
-        createPost() {
-            const newPost = {
-                id: Date.now(),
-                title: this.title,
-                description: this.body
-            }
-            this.posts.push(newPost)
-            this.title = ''
-            this.body = ''
+        createPost(post) {
+            this.posts.push(post)
         }
     }
 }
